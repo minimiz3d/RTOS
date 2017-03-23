@@ -2,8 +2,7 @@
 #include<stdlib.h>
 
 /* structure for a node */
-struct node
-{
+struct node {
     int data;
     struct node *next;
 };
@@ -20,8 +19,7 @@ void swap(struct node *a, struct node *b);
 /* Function to print nodes in a given linked list */
 void printList(struct node *start);
 
-int main()
-{
+int main() {
     int arr[] = {12, 56, 2, 11, 1, 90};
     int list_size, i;
 
@@ -50,8 +48,7 @@ int main()
 
 
 /* Function to insert a node at the begining of a linked lsit */
-void insertAtTheBegin(struct node **start_ref, int data)
-{
+void insertAtTheBegin(struct node **start_ref, int data) {
     struct node *ptr1 = (struct node*)malloc(sizeof(struct node));
     ptr1->data = data;
     ptr1->next = *start_ref;
@@ -59,8 +56,7 @@ void insertAtTheBegin(struct node **start_ref, int data)
 }
 
 /* Function to print nodes in a given linked list */
-void printList(struct node *start)
-{
+void printList(struct node *start) {
     struct node *temp = start;
     printf("\n");
     while (temp!=NULL)
@@ -71,8 +67,7 @@ void printList(struct node *start)
 }
 
 /* Bubble sort the given linked lsit */
-void bubbleSort(struct node *start)
-{
+void bubbleSort(struct node *start) {
     int swapped, i;
     struct node *ptr1;
     struct node *lptr = NULL;
@@ -101,8 +96,7 @@ void bubbleSort(struct node *start)
 }
 
 /* function to swap data of two nodes a and b*/
-void swap(struct node *a, struct node *b)
-{
+void swap(struct node *a, struct node *b) {
     int temp = a->data;
     a->data = b->data;
     b->data = temp;

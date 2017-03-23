@@ -4,16 +4,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "../ResponseTimeAnalysis/RTA.h"
 
 /* Functions */
 //Creates a new Node and returns pointer to it.
-struct Node* GetNewNode(int x);
+struct Node* GetNewNode(Task x);
 
 //Inserts a Node at head of doubly linked list
-void InsertAtHead(int x);
+void InsertAtHead(Task x);
 
 //Inserts a Node at tail of Doubly linked list
-void InsertAtTail(int x);
+void InsertAtTail(Task x);
 
 //Prints all the elements in linked list in forward traversal order
 void Print();
@@ -21,9 +22,8 @@ void Print();
 //Prints all elements in linked list in reverse traversal order.
 void ReversePrint();
 
-/* Variables */
 struct Node {
-	int data;
+	Task data;
 	struct Node* next;
 	struct Node* prev;
 };

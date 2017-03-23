@@ -2,7 +2,7 @@
 #include "DoublyLinkedList.h"
 
 //Creates a new Node and returns pointer to it.
-struct Node* GetNewNode(int x) {
+struct Node* GetNewNode(Task x) {
 	struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
 
     newNode->data = x;
@@ -13,7 +13,7 @@ struct Node* GetNewNode(int x) {
 }
 
 //Inserts a Node at head of doubly linked list
-void InsertAtHead(int x) {
+void InsertAtHead(Task x) {
 	struct Node* newNode = GetNewNode(x);
 
     if(head == NULL) {
@@ -26,7 +26,7 @@ void InsertAtHead(int x) {
 }
 
 //Inserts a Node at tail of Doubly linked list
-void InsertAtTail(int x) {
+void InsertAtTail(Task x) {
 	struct Node* temp = head;
 	struct Node* newNode = GetNewNode(x);
 
@@ -45,8 +45,10 @@ void InsertAtTail(int x) {
 void Print() {
 	struct Node* temp = head;
 	printf("Forward: ");
+
+	// TODO: ajustar o print para algum elemento da struct Task.
 	while(temp != NULL) {
-		printf("%d ",temp->data);
+		// printf("%d ",temp->data);
 		temp = temp->next;
 	}
 	printf("\n");
