@@ -1,0 +1,6 @@
+A pasta 'ResponseTimeAnalysis' contém um Makefile para compilação dos arquivos necessários.
+
+Para execução no terminal:
+$ cd ResponseTimeAnalysis
+$ make
+$ ./Main
