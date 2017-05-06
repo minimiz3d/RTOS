@@ -2,7 +2,7 @@
 #include <pthread.h>
 
 // Compile with -pthread
-// Create a mutex this ready to be locked!
+// Create a mutex ready to be locked!
 pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
 
 int sum = 0;

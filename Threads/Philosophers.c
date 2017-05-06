@@ -74,3 +74,46 @@ void think(int position) {
 void eat(int position) {
   printf("Philosopher %d eating...\n", position);
 }
+
+// AULA FILOSOFOS VAR COND:
+pthread_mutex_t m[5] = PTHREAD_MUTEX_INITIALIZER;
+int g[5] = {0,0,0,0,0};
+pthread_cond_t c[5] = PTHREAD_COND_INITIALIZER;
+
+int id = 0;
+int d = (id == 0)? 4 : id = 1;
+int e = id;
+
+e = tid;
+d = tid == 0 ? 4 : tid - 1;
+
+while (1) {
+    // espera
+
+    // pega garfo (D)
+    pthread_mutex_lock(&m[d]);
+        while (g[d] == 1)
+            pthread_cond_wait(&c[d], &m[d]);
+        g[d] = 1;
+    pthread_mutex_unlock(&m[d]);
+    // pega garfo (E)
+    pthread_mutex_lock(&m[e]);
+        while (g[e] == 1)
+            pthread_cond_wait(&c[e], &m[e]);
+        g[e] = 1;
+    pthread_mutex_unlock(&m[e]);
+
+    // come
+    sleep(10);
+
+    // liberar garfo D
+    pthread_mutex_lock(&m[d]);
+        g[d] = 0;
+        pthread_cond_signal(&c[d]);
+    pthread_mutex_unlock(&m[d]);
+    // liberar garfo D
+    pthread_mutex_lock(&m[e]);
+        g[e] = 0;
+        pthread_cond_signal(&c[e]);
+    pthread_mutex_unlock(&m[e]);
+}
