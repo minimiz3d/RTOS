@@ -130,7 +130,7 @@ int main(int argc, char *argv[]) {
 
     pthread_create (&t_1, NULL, thread_1, NULL) ;
     pthread_create (&t_2, NULL, thread_2, NULL) ;
-    sleep (10);
+    sleep (2);
     printf ("Thread 1 %d iterations\n", thread_1_count);
     printf ("Thread 2 %d iterations\n", thread_2_count);
     return 0 ;

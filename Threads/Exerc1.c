@@ -13,6 +13,8 @@ void *threadFunction(void *thread_id) {
 
 	printf("Thread[%ld]:\n", id);
     printf("Counter: %d\n", counter);
+
+	return NULL;
 }
 
 void main() {
@@ -36,7 +38,10 @@ void main() {
 	// Espera por todas as threads encerrarem.
 	for (i = 0; i < T; i++) {
 		pthread_join(thread[i], NULL);
+
 	}
+
+	printf("Threads encerraram.\n");
 
 	pthread_exit(NULL);
 }
