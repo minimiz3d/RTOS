@@ -1,0 +1,14 @@
+1 - Enviar informações de sensores para central de processamento
+    * Uma das tarefas seria leitura de sensores (visão, acelerômetro) em prazos definidos
+        * Memória compartilhada .:. definir quais informações serão concorrentes
+
+2 - Servidor recebe informações processadas (valores de effectors)
+3 - Servidor tem a função de arbitrar partida, anunciando para a central eventos de jogo, como:
+    * FALTA PARA TIME X
+    * FIM DE PRIMEIRO TEMPO
+
+COMANDOS:
+    Reposicionamento do robô (após gols, por exemplo).
+
+CONCORRÊNCIA:
+    Uso da bola (WorldObject->BALL)
